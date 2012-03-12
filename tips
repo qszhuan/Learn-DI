@@ -1,0 +1,2 @@
+Loose couping enables you to write code which is [open for extensibility, but closed for modification]. This is called the OPEN/CLOSED PRINCIPLE.
+The only place where you need to modify the code is at the application's entry point; we call this the COMPOSITION ROOT.

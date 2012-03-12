@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Configuration;
+using System.Threading;
 
 namespace HelloDI
 {
@@ -8,13 +9,21 @@ namespace HelloDI
         static void Main(string[] args)
         {
             //create writer using config file
+//            var writer = MessageWriter();
+
+//            IMessageWriter writer = new ConsoleMessageWriter();
+            var writer = new SecureMessageWriter(new ConsoleMessageWriter());
+            var salutation = new Salutation(writer);
+
+            salutation.Exclaim();
+        }
+
+        private static IMessageWriter MessageWriter()
+        {
             var typeName = ConfigurationManager.AppSettings["messageWriter"];
             var type = Type.GetType(typeName, true);
             var writer = (IMessageWriter) Activator.CreateInstance(type);
-
-//            IMessageWriter writer = new ConsoleMessageWriter();
-            var salutation = new Salutation(writer);
-            salutation.Exclaim();
+            return writer;
         }
     }
 
@@ -48,5 +57,27 @@ namespace HelloDI
     public interface IMessageWriter
     {
         void Write(string message);
+    }
+
+    public class SecureMessageWriter :IMessageWriter
+    {
+        private readonly IMessageWriter _writer;
+
+        public SecureMessageWriter(IMessageWriter writer)
+        {
+            if (writer == null)
+            {
+                throw new ArgumentNullException("writer");
+            }
+            _writer = writer;
+        }
+
+        public void Write(string message)
+        {
+            if (Thread.CurrentPrincipal.Identity.IsAuthenticated)
+            {
+                _writer.Write(message);
+            }
+        }
     }
 }
