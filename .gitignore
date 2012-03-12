@@ -1,2 +1,6 @@
 Debug
 bin
+_ReSharper*
+obj
+*.usr
+*.suo
