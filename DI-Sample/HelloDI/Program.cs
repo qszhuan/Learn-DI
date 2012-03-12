@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 
 namespace HelloDI
 {
@@ -6,7 +7,12 @@ namespace HelloDI
     {
         static void Main(string[] args)
         {
-            IMessageWriter writer = new ConsoleMessageWriter();
+            //create writer using config file
+            var typeName = ConfigurationManager.AppSettings["messageWriter"];
+            var type = Type.GetType(typeName, true);
+            var writer = (IMessageWriter) Activator.CreateInstance(type);
+
+//            IMessageWriter writer = new ConsoleMessageWriter();
             var salutation = new Salutation(writer);
             salutation.Exclaim();
         }
