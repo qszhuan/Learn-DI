@@ -2,5 +2,5 @@ Debug
 bin
 _ReSharper*
 obj
-*.usr
+*.user
 *.suo
