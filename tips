@@ -1,2 +1,27 @@
 Loose couping enables you to write code which is [open for extensibility, but closed for modification]. This is called the OPEN/CLOSED PRINCIPLE.
 The only place where you need to modify the code is at the application's entry point; we call this the COMPOSITION ROOT.
+
+seam 接缝
+cornerstone 基础，柱石，地基
+volatile 不稳定的  ['v?l?tail] 
+stable 稳定的
+succinct 简洁的
+eligible 合适的，符合条件的
+interception 拦截
+be devoted to专心于，专用于
+refresher 补习课程，复习课程，可提神的人或物。
+means to an end 达到目的的手段
+
+Three dimensions of DI:
+Object composition
+Object lifetime
+Interception
+
+pervasive 普遍的
+analogy 类比 类似 类推
+egg yolk 蛋黄
+instill 灌输
+akin 类似的
+tried and true 经考验证明好的
+mentor 指导者，良师益友
+neutral 中立的 中性的
