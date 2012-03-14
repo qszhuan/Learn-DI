@@ -5,7 +5,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloDI", "HelloDI\HelloDI.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoItWrong", "DoItWrong\DoItWrong.csproj", "{10AFFE95-64CB-47B6-9095-28699D01D7A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoItRight", "DoItRight\DoItRight.csproj", "{2408CC79-1640-4558-B820-19CAF8952AB1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoItRight-Web", "DoItRight\DoItRight-Web.csproj", "{2408CC79-1640-4558-B820-19CAF8952AB1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoItRight-Domain", "DoItRight-Domain\DoItRight-Domain.csproj", "{E10CE994-6327-49C9-8DB9-90F263858F6F}"
 EndProject
