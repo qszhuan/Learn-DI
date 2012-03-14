@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Globalization;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
 using System.Web.Security;
 
 namespace DoItWrong.Models
@@ -251,7 +247,7 @@ namespace DoItWrong.Models
             PropertyDescriptorCollection properties = TypeDescriptor.GetProperties(value);
             object originalValue = properties.Find(OriginalProperty, true /* ignoreCase */).GetValue(value);
             object confirmValue = properties.Find(ConfirmProperty, true /* ignoreCase */).GetValue(value);
-            return Object.Equals(originalValue, confirmValue);
+            return Equals(originalValue, confirmValue);
         }
     }
 
@@ -274,7 +270,7 @@ namespace DoItWrong.Models
 
         public override bool IsValid(object value)
         {
-            string valueAsString = value as string;
+            var valueAsString = value as string;
             return (valueAsString != null && valueAsString.Length >= _minCharacters);
         }
     }
